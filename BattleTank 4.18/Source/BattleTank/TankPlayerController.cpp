@@ -16,7 +16,6 @@ void ATankPlayerController::BeginPlay()
 {
 	Super::BeginPlay();
 
-	UE_LOG(LogTemp, Warning, TEXT("begin play"));
 	auto ControlledTank = GetControlledTank();
 	if (!ControlledTank) { return; }
 	else
@@ -25,7 +24,7 @@ void ATankPlayerController::BeginPlay()
 	}
 }
 
-void ATankPlayerController::Tick(float DeltaTime)
-{
-	Super::Tick(DeltaTime);
-}
+//void ATankPlayerController::Tick(float DeltaTime)
+//{
+//	Super::Tick(DeltaTime);
+//}
