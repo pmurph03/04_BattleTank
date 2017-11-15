@@ -11,20 +11,22 @@ ATank* ATankAIController::GetControlledTank() const
 void ATankAIController::BeginPlay()
 {
 	Super::BeginPlay();
-
 	auto PlayerTank = GetPlayerTank();
 	if (!PlayerTank) { return; }
 	else
 	{
 		UE_LOG(LogTemp, Warning, TEXT("AIController found: %s"), *(PlayerTank->GetName()));
 	}
-
-	
+	//t
 }
 
 void ATankAIController::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+	if (GetPlayerTank())
+	{
+		GetControlledTank()->AimAt(GetPlayerTank()->GetActorLocation());
+	}
 }
 
 ATank* ATankAIController::GetPlayerTank() const
